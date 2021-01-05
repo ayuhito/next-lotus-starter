@@ -1,3 +1,5 @@
+import "@fontsource/poppins/400.css";
+
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 
