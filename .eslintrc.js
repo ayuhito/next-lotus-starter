@@ -28,8 +28,8 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended", // Make this the last element so prettier config overrides other formatting rules
   ],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
