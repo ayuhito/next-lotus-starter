@@ -1,18 +1,10 @@
-import {
-  Code,
-  Icon,
-  Link as ChakraLink,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
-import { AiFillCheckCircle, AiOutlineLink } from "react-icons/ai";
+import { Code, Link, List, Text } from "@chakra-ui/react";
 
 import { Container } from "../components/Container";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
+import { ListItemCustom } from "../components/ListItemCustom";
 import { Main } from "../components/Main";
 import { Navbar } from "../components/Navbar/Navbar";
 
@@ -22,34 +14,41 @@ const Index = () => (
     <Hero />
     <Main>
       <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
-        <Code>typescript</Code>.
+        Personal starter repository built using <Code>Next.js</Code> +{" "}
+        <Code>Chakra UI</Code> + <Code>TypeScript</Code>. Based off
+        Vercel&apos;s{" "}
+        <Link
+          isExternal
+          to="https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript"
+        >
+          with-chakra-ui-typescript
+        </Link>{" "}
+        template.
       </Text>
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={AiFillCheckCircle} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <Icon as={AiOutlineLink} />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={AiFillCheckCircle} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <Icon as={AiOutlineLink} />
-          </ChakraLink>
-        </ListItem>
+      <List spacing={3} py={10} mt={0}>
+        <ListItemCustom href="https://nextjs.org" title="Next.js" />
+        <ListItemCustom href="https://chakra-ui.com/" title="Chakra UI" />
+        <ListItemCustom
+          href="https://www.typescriptlang.org/"
+          title="TypeScript"
+        />
+        <ListItemCustom
+          href="https://github.com/fontsource/fontsource"
+          title="Fontsource"
+        />
+        <ListItemCustom
+          href="https://react-icons.github.io/react-icons"
+          title="React Icons"
+        />
+        <ListItemCustom href="https://prettier.io/" title="Prettier" />
+        <ListItemCustom href="https://eslint.org/" title="ESLint" />
       </List>
+      <CTA />
     </Main>
     <Footer>
       <Text>Next ❤️ Chakra</Text>
     </Footer>
-    <CTA />
   </Container>
 );
 
