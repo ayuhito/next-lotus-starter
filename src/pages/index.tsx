@@ -10,13 +10,14 @@ import {
 
 import { Container } from "../components/Container";
 import { CTA } from "../components/CTA";
-import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { Main } from "../components/Main";
+import { Navbar } from "../components/Navbar/Navbar";
 
 const Index = () => (
-  <Container height="100vh">
+  <Container minHeight="100vh">
+    <Navbar />
     <Hero />
     <Main>
       <Text>
@@ -44,8 +45,6 @@ const Index = () => (
         </ListItem>
       </List>
     </Main>
-
-    <DarkModeSwitch />
     <Footer>
       <Text>Next ❤️ Chakra</Text>
     </Footer>
