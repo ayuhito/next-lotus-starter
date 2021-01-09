@@ -2,10 +2,10 @@ import { Code, Link, List, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
 import { Container } from "../components/Container";
-import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { ListItemCustom } from "../components/ListItemCustom";
+import { CTA } from "../components/Index/CTA";
+import { ListItemCustom } from "../components/Index/ListItemCustom";
 import { Main } from "../components/Main";
 import { Navbar } from "../components/Navbar/Navbar";
 
@@ -15,8 +15,8 @@ const Index = () => (
       <title>next-lotus-starter | Home</title>
     </Head>
     <Navbar />
-    <Hero />
     <Main>
+      <Hero />
       <Text>
         Personal starter repository built using <Code>Next.js</Code> +{" "}
         <Code>Chakra UI</Code> + <Code>TypeScript</Code>. Based off

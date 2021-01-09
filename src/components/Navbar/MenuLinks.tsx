@@ -33,9 +33,7 @@ export const MenuLinks = ({ isOpen }) => {
             GitHub
           </Button>
         </MenuItem>
-        <MenuItem>
-          <DarkModeSwitch />
-        </MenuItem>
+        <DarkModeSwitch />
       </Stack>
     </Box>
   );
