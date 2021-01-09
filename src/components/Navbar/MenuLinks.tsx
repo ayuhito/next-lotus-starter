@@ -1,14 +1,15 @@
-import { Box, Button, Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text } from "@chakra-ui/react";
 
+import { NextChakraLink } from "../NextChakraLink";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 
 const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
-    <ChakraLink href={to}>
+    <NextChakraLink href={to}>
       <Text display="block" {...rest}>
         {children}
       </Text>
-    </ChakraLink>
+    </NextChakraLink>
   );
 };
 
@@ -26,20 +27,10 @@ export const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/how">How It works </MenuItem>
-        <MenuItem to="/features">Features </MenuItem>
-        <MenuItem to="/pricing">Pricing </MenuItem>
-        <MenuItem to="/signup">
-          <Button
-            size="sm"
-            rounded="md"
-            color={["primary.500", "primary.500", "white", "white"]}
-            bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"],
-            }}
-          >
-            Create Account
+        <MenuItem to="/page2">Page 2 </MenuItem>
+        <MenuItem to="https://github.com/DecliningLotus/next-lotus-starter">
+          <Button size="sm" rounded="md" variant="outline" colorScheme="black">
+            GitHub
           </Button>
         </MenuItem>
         <MenuItem>
