@@ -1,4 +1,5 @@
 import { Code, Link, List, Text } from "@chakra-ui/react";
+import Head from "next/head";
 
 import { Container } from "../components/Container";
 import { CTA } from "../components/CTA";
@@ -10,6 +11,9 @@ import { Navbar } from "../components/Navbar/Navbar";
 
 const Index = () => (
   <Container minHeight="100vh">
+    <Head>
+      <title>next-lotus-starter | Home</title>
+    </Head>
     <Navbar />
     <Hero />
     <Main>
