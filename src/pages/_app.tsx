@@ -3,17 +3,19 @@ import "@fontsource/poppins/700.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
-import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 
 import theme from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <DefaultSeo
-        title="next-lotus-starter"
-        description="Personal starter template for my Next.js projects."
-      />
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
+      </Head>
       <Component {...pageProps} />
     </ChakraProvider>
   );
