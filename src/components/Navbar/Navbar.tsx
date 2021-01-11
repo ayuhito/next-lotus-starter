@@ -1,4 +1,4 @@
-import { Collapse, Flex, FlexProps, useDisclosure } from "@chakra-ui/react";
+import { Flex, FlexProps, useDisclosure } from "@chakra-ui/react";
 
 import { Logo } from "./Logo";
 import { MenuLinks } from "./MenuLinks";
@@ -9,7 +9,7 @@ export const Navbar = (props: FlexProps) => {
 
   return (
     <NavbarContainer {...props}>
-      <Logo w="100px" />
+      <Logo />
       <MenuToggle toggle={onToggle} isOpen={isOpen} />
 
       <MenuLinks isOpen={isOpen} />

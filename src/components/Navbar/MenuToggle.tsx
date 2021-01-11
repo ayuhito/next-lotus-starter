@@ -1,10 +1,14 @@
-import { Box, CloseButton, Icon } from "@chakra-ui/react";
+import { Box, CloseButton, IconButton } from "@chakra-ui/react";
 import { FiMenu as MenuIcon } from "react-icons/fi";
 
 export const MenuToggle = ({ toggle, isOpen }) => {
   return (
-    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-      {isOpen ? <Icon as={CloseButton} /> : <Icon as={MenuIcon} />}
+    <Box display={{ base: "inline-block", md: "none" }} onClick={toggle}>
+      {isOpen ? (
+        <IconButton aria-label="Close menu" icon={<CloseButton />} />
+      ) : (
+        <IconButton aria-label="Open menu" icon={<MenuIcon />} />
+      )}
     </Box>
   );
 };

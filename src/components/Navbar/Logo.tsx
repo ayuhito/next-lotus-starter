@@ -5,8 +5,8 @@ export const Logo = (props: BoxProps) => {
   const logoURL = useColorModeValue("/lotus-logo-d.svg", "/lotus-logo-w.svg");
 
   return (
-    <Box {...props}>
-      <Image src={logoURL} alt="Logo" height={60} width={80} />
+    <Box boxSize="65px" position="relative" {...props}>
+      <Image src={logoURL} alt="Logo" layout="fill" objectFit="contain" />
     </Box>
   );
 };
