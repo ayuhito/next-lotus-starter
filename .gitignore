@@ -18,6 +18,9 @@
 **/public/sw.js.map
 **/public/worker-*.js
 
+**/public/sitemap.xml
+**/public/robots.txt
+
 # production
 /build
 

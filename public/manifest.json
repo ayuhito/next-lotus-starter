@@ -4,7 +4,7 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "app_name": "next-lotus-starter",
+  "name": "next-lotus-starter",
   "short_name": "next-lotus-starter",
   "description": "Personal starter template for my Next.js projects.",
   "icons": [

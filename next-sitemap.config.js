@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://example.com",
+  siteUrl: "https://next-lotus-starter.vercel.app/",
   generateRobotsTxt: true,
 };
