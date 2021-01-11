@@ -19,9 +19,7 @@ const Page2 = () => (
       <Text>Page 2 example.</Text>
       <CTA />
     </Main>
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
+    <Footer />
   </Container>
 );
 

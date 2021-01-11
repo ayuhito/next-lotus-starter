@@ -50,9 +50,7 @@ const Index = () => (
       </List>
       <CTA />
     </Main>
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
+    <Footer />
   </Container>
 );
 
