@@ -16,7 +16,7 @@ const Page2 = () => (
     <Navbar />
     <Main>
       <Hero />
-      <Text>Page 2 example.</Text>
+      <Text pb="4rem">Page 2 example.</Text>
       <CTA />
     </Main>
     <Footer />
