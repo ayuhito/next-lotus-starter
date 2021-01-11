@@ -1,20 +1,18 @@
 import { Code, Link, List, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
-import { Container } from "../components/Container";
-import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { CTA } from "../components/Index/CTA";
 import { ListItemCustom } from "../components/Index/ListItemCustom";
 import { Main } from "../components/Main";
-import { Navbar } from "../components/Navbar/Navbar";
+import { PageContainer } from "../components/PageContainer";
 
 const Index = () => (
-  <Container minHeight="100vh">
+  <PageContainer>
     <Head>
       <title>next-lotus-starter | Home</title>
     </Head>
-    <Navbar />
+
     <Main>
       <Hero />
       <Text>
@@ -50,8 +48,7 @@ const Index = () => (
       </List>
       <CTA />
     </Main>
-    <Footer />
-  </Container>
+  </PageContainer>
 );
 
 export default Index;
