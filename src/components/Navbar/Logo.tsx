@@ -9,7 +9,13 @@ export const Logo = (props: BoxProps) => {
   return (
     <NextChakraLink href="/">
       <Box boxSize="65px" position="relative" {...props}>
-        <Image src={logoURL} alt="Logo" layout="fill" objectFit="contain" />
+        <Image
+          src={logoURL}
+          alt="Logo"
+          layout="fill"
+          objectFit="contain"
+          priority={true}
+        />
       </Box>
     </NextChakraLink>
   );
