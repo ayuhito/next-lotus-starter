@@ -18,11 +18,13 @@ const fonts = {
   body: `'Poppins', sans-serif`,
 };
 
+const colors = {
+  black: "#16161D",
+};
+
 const theme = extendTheme({
   breakpoints,
-  colors: {
-    black: "#16161D",
-  },
+  colors,
   config,
   fonts,
 });
