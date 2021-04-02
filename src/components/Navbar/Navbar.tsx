@@ -1,163 +1,97 @@
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Collapse,
+  BoxProps,
+  Button,
   Flex,
-  IconButton,
-  Link,
-  Spacer,
+  FlexProps,
   Stack,
+  StackProps,
   Text,
-  TextProps,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 import { NextChakraLink } from "../NextChakraLink";
 import { DarkModeSwitch } from "./DarkModeSwitch";
+import { MobileNavButton, MobileNavContent } from "./MobileNav";
 
-export const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  const borderColor = useColorModeValue("gray.200", "gray.900");
+export const Logo = (props: BoxProps) => {
+  const logoURL = useColorModeValue("/lotus-logo-d.svg", "/lotus-logo-w.svg");
 
   return (
-    <Box as="header">
-      <Flex
-        as="nav"
-        minHeight="60px"
-        width="100%"
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle="solid"
-        borderColor={borderColor}
-        align="center"
-        justify="space-between"
-        wrap="wrap"
-      >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? (
-                <CloseIcon width={3} height={3} />
-              ) : (
-                <HamburgerIcon width={5} height={5} />
-              )
-            }
-            variant="ghost"
-            aria-label="Toggle Navigation"
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }}>
-          <Text
-            textAlign={{
-              base: "center",
-              md: "left",
-            }}
-          >
-            Logo
-          </Text>
-          <Spacer />
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
-          </Flex>
-          <DarkModeSwitch />
-        </Flex>
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
+    <NextChakraLink href="/">
+      <Box boxSize="65px" position="relative" {...props}>
+        <Image
+          src={logoURL}
+          alt="Logo"
+          layout="fill"
+          objectFit="contain"
+          priority={true}
+        />
+      </Box>
+    </NextChakraLink>
   );
 };
 
-const DesktopNav = () => {
+const NavbarContainer = ({ children, ...props }) => {
   return (
-    <Box flexBasis={{ base: "100%", md: "auto" }}>
-      <Stack
-        spacing={8}
-        align="center"
-        justify={["center", "space-between", "flex-end", "flex-end"]}
-        direction={["column", "row", "row", "row"]}
-        pt={[4, 4, 0, 0]}
-      >
-        {NAV_ITEMS.map((navItem) => (
-          <DesktopNavItem
-            key={navItem.label}
-            label={navItem.label}
-            href={navItem.href}
-          />
-        ))}
-      </Stack>
-    </Box>
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      w="100%"
+      p={8}
+      {...props}
+    >
+      {children}
+    </Flex>
   );
 };
 
-const DesktopNavItem = ({ label, href, rest }: NavItem) => {
+export const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
-    <NextChakraLink href={href}>
+    <NextChakraLink href={to}>
       <Text display="block" {...rest}>
-        {label}
+        {children}
       </Text>
     </NextChakraLink>
   );
 };
 
-const MobileNav = () => {
+export const MenuStack = (props: StackProps) => (
+  <Stack spacing={8} align="center" justify="flex-end" {...props}>
+    <MenuItem to="/">Home</MenuItem>
+    <MenuItem to="/page2">Page 2</MenuItem>
+    <MenuItem to="https://github.com/DecliningLotus/next-lotus-starter">
+      <Button size="sm" rounded="md" variant="outline" colorScheme="black">
+        GitHub
+      </Button>
+    </MenuItem>
+    <DarkModeSwitch />
+  </Stack>
+);
+
+export const Navbar = (props: FlexProps) => {
+  const { isOpen, onToggle } = useDisclosure();
   return (
-    <Stack p={4} display={{ md: "none" }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
+    <>
+      <NavbarContainer {...props}>
+        <Logo />
+        <Box
+          display={{ base: "none", md: "block" }}
+          flexBasis={{ base: "100%", md: "auto" }}
+        >
+          <MenuStack direction="row" />
+        </Box>
+        <MobileNavButton
+          aria-label="Navigation"
+          onToggle={onToggle}
+          isOpen={isOpen}
+        />
+      </NavbarContainer>
+      <MobileNavContent isOpen={isOpen} onToggle={onToggle} />
+    </>
   );
 };
-
-const MobileNavItem = ({ label, href }: NavItem) => {
-  return (
-    <Stack spacing={4}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? "#"}
-        justify="space-between"
-        align="center"
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text fontWeight="600">{label}</Text>
-      </Flex>
-    </Stack>
-  );
-};
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-  rest?: TextProps;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Inspiration",
-    href: "#",
-  },
-  {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
-  },
-];

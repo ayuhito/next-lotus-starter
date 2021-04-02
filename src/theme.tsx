@@ -8,7 +8,7 @@ const breakpoints = createBreakpoints({
   xl: "80em",
 });
 
-// Currently a bug with theme.config typings. Workaround.
+// Currently a bug with theme.config typings for initialColorMode. Workaround.
 interface ThemeConfig {
   useSystemColorMode?: boolean;
   initialColorMode: "light" | "dark";
