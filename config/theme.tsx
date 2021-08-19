@@ -1,5 +1,5 @@
-import { extendTheme } from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { createBreakpoints, mode } from "@chakra-ui/theme-tools";
 
 const breakpoints = createBreakpoints({
   sm: "40em",
@@ -8,15 +8,13 @@ const breakpoints = createBreakpoints({
   xl: "80em",
 });
 
-// Currently a bug with theme.config typings for initialColorMode. Workaround.
-interface ThemeConfig {
-  useSystemColorMode?: boolean;
-  initialColorMode: "light" | "dark";
-}
-
 const config: ThemeConfig = {
   useSystemColorMode: false,
   initialColorMode: "dark",
+};
+
+const colors = {
+  black: "#16161D",
 };
 
 const fonts = {
@@ -24,8 +22,13 @@ const fonts = {
   body: `'Poppins', sans-serif`,
 };
 
-const colors = {
-  black: "#16161D",
+const styles = {
+  global: (props) => ({
+    "html, body": {
+      backgroundColor: mode("gray.50", "gray.900")(props),
+      color: mode("black", "white")(props),
+    },
+  }),
 };
 
 const theme = extendTheme({
@@ -33,6 +36,7 @@ const theme = extendTheme({
   colors,
   config,
   fonts,
+  styles,
 });
 
 export default theme;
