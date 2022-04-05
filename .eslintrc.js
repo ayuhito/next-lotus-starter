@@ -1,8 +1,8 @@
 module.exports = {
   plugins: ["@typescript-eslint"],
   extends: [
-    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
     "plugin:prettier/recommended",
   ],
   rules: {
