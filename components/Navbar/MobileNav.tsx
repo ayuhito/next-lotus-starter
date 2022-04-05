@@ -17,24 +17,16 @@ interface MobileNavProps extends UseDisclosureProps {
   onToggle?: () => void;
 }
 
-export const MobileNavButton = (
-  { onToggle, isOpen }: MobileNavProps,
-  props: IconButtonProps
-) => {
+export const MobileNavButton = ({ onToggle, isOpen }: MobileNavProps, props: IconButtonProps) => {
   return (
     <Box display={{ base: "inline-block", lg: "none" }} onClick={onToggle}>
       <IconButton
         display={{ base: "flex", lg: "none" }}
         fontSize="20px"
         color={useColorModeValue("gray.800", "inherit")}
-        variant="ghost"
-        icon={
-          isOpen ? (
-            <IconButton aria-label="Close menu" icon={<CloseIcon />} />
-          ) : (
-            <IconButton aria-label="Open menu" icon={<HamburgerIcon />} />
-          )
-        }
+        variant="solid"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        icon={isOpen ? <CloseIcon boxSize={4} /> : <HamburgerIcon />}
         {...props}
       />
     </Box>
@@ -64,14 +56,7 @@ export const MobileNavContent = ({ isOpen, onToggle }: MobileNavProps) => {
               left="0"
               zIndex={99}
             >
-              <Flex
-                as="nav"
-                align="center"
-                justify="space-between"
-                wrap="wrap"
-                width="100%"
-                p={8}
-              >
+              <Flex as="nav" align="center" justify="space-between" wrap="wrap" width="100%" p={8}>
                 <Logo />
                 <MobileNavButton onToggle={onToggle} isOpen={isOpen} />
               </Flex>

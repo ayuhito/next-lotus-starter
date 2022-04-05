@@ -22,22 +22,8 @@ export const Logo = (props: ButtonProps) => {
 
   return (
     <NextChakraLink href="/">
-      <Button
-        width="100%"
-        size="lg"
-        variant="ghost"
-        colorScheme="gray"
-        p={8}
-        mx={2}
-        {...props}
-      >
-        <Image
-          src={logoURL}
-          alt="Logo"
-          layout="fill"
-          objectFit="contain"
-          priority={true}
-        />
+      <Button width="100%" size="lg" variant="ghost" colorScheme="gray" p={8} mx={2} {...props}>
+        <Image src={logoURL} alt="Logo" layout="fill" objectFit="contain" priority={true} />
       </Button>
     </NextChakraLink>
   );
@@ -47,15 +33,7 @@ type NavbarContainerProps = PropsWithChildren<FlexProps>;
 
 const NavbarContainer = ({ children, ...props }: NavbarContainerProps) => {
   return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      w="100%"
-      p={8}
-      {...props}
-    >
+    <Flex as="nav" align="center" justify="space-between" wrap="wrap" w="100%" p={8} {...props}>
       {children}
     </Flex>
   );
@@ -70,14 +48,7 @@ type MenuItemProps = PropsWithChildren<ButtonProps & MenuItemToProp>;
 export const MenuItem = ({ children, to = "/", ...props }: MenuItemProps) => {
   return (
     <NextChakraLink href={to} px={1}>
-      <Button
-        size="md"
-        fontWeight="600"
-        width="100%"
-        variant="ghost"
-        colorScheme="gray"
-        {...props}
-      >
+      <Button size="md" fontWeight="600" width="100%" variant="ghost" colorScheme="gray" {...props}>
         {children}
       </Button>
     </NextChakraLink>
@@ -85,19 +56,11 @@ export const MenuItem = ({ children, to = "/", ...props }: MenuItemProps) => {
 };
 
 export const MenuStack = (props: StackProps) => (
-  <Stack
-    spacing={{ base: 0, lg: 4 }}
-    align="center"
-    justify="flex-end"
-    {...props}
-  >
+  <Stack spacing={{ base: 0, lg: 4 }} align="center" justify="flex-end" {...props}>
     <HStack pb={{ base: 4, lg: 0 }}>
       <MenuItem to="/">Home</MenuItem>
       <MenuItem to="/page2">Page 2</MenuItem>
-      <MenuItem
-        variant="outline"
-        to="https://github.com/DecliningLotus/next-lotus-starter"
-      >
+      <MenuItem variant="outline" to="https://github.com/DecliningLotus/next-lotus-starter">
         GitHub
       </MenuItem>
     </HStack>
@@ -113,17 +76,10 @@ export const Navbar = (props) => {
     <>
       <NavbarContainer {...props}>
         <Logo />
-        <Box
-          display={{ base: "none", lg: "block" }}
-          flexBasis={{ base: "100%", lg: "auto" }}
-        >
+        <Box display={{ base: "none", lg: "block" }} flexBasis={{ base: "100%", lg: "auto" }}>
           <MenuStack direction="row" />
         </Box>
-        <MobileNavButton
-          aria-label="Navigation"
-          onToggle={onToggle}
-          isOpen={isOpen}
-        />
+        <MobileNavButton aria-label="Navigation" onToggle={onToggle} isOpen={isOpen} />
       </NavbarContainer>
       <MobileNavContent isOpen={isOpen} onToggle={onToggle} />
     </>

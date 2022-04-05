@@ -16,12 +16,11 @@ const Index = () => (
     <Main>
       <Hero />
       <Text>
-        Personal starter repository built using <Code>Next.js</Code> +{" "}
-        <Code>Chakra UI</Code> + <Code>TypeScript</Code>. Based off
-        Vercel&apos;s{" "}
+        Personal starter repository built using <Code>Next.js</Code> + <Code>Chakra UI</Code> +{" "}
+        <Code>TypeScript</Code>. Based off Vercel&apos;s{" "}
         <Link
           isExternal
-          to="https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript"
+          href="https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript"
         >
           with-chakra-ui-typescript
         </Link>{" "}
@@ -31,18 +30,9 @@ const Index = () => (
       <List spacing={3} py={10} mt={0}>
         <ListItemCustom href="https://nextjs.org" title="Next.js" />
         <ListItemCustom href="https://chakra-ui.com/" title="Chakra UI" />
-        <ListItemCustom
-          href="https://www.typescriptlang.org/"
-          title="TypeScript"
-        />
-        <ListItemCustom
-          href="https://github.com/fontsource/fontsource"
-          title="Fontsource"
-        />
-        <ListItemCustom
-          href="https://react-icons.github.io/react-icons"
-          title="React Icons"
-        />
+        <ListItemCustom href="https://www.typescriptlang.org/" title="TypeScript" />
+        <ListItemCustom href="https://github.com/fontsource/fontsource" title="Fontsource" />
+        <ListItemCustom href="https://react-icons.github.io/react-icons" title="React Icons" />
         <ListItemCustom href="https://prettier.io/" title="Prettier" />
         <ListItemCustom href="https://eslint.org/" title="ESLint" />
       </List>
