@@ -22,6 +22,7 @@ const config: ThemeConfig = {
 const fonts = {
   heading: `'Poppins', sans-serif`,
   body: `'Poppins', sans-serif`,
+  mono: `'Roboto MonoVariable', sans-serif`,
 };
 
 const colors = {

@@ -1,5 +1,6 @@
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/700.css";
+import "@fontsource/roboto-mono/variable.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
