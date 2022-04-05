@@ -12,8 +12,3 @@ export const ListItemCustom = (props: LinkProps) => {
     </ListItem>
   );
 };
-
-ListItemCustom.defaultProps = {
-  href: "/",
-  title: "Empty",
-};
