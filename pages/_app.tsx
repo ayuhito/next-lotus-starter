@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
+import { PageContainer } from "../components/PageContainer";
 import theme from "../config/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Component {...pageProps} />
+      <PageContainer>
+        <Component {...pageProps} />
+      </PageContainer>
     </ChakraProvider>
   );
 }

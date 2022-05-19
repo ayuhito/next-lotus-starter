@@ -5,14 +5,12 @@ import { Hero } from "../components/Hero";
 import { CTA } from "../components/Index/CTA";
 import { ListItemCustom } from "../components/Index/ListItemCustom";
 import { Main } from "../components/Main";
-import { PageContainer } from "../components/PageContainer";
 
 const Index = () => (
-  <PageContainer>
+  <>
     <Head>
       <title>next-lotus-starter | Home</title>
     </Head>
-
     <Main>
       <Hero />
       <Text>
@@ -38,7 +36,7 @@ const Index = () => (
       </List>
       <CTA />
     </Main>
-  </PageContainer>
+  </>
 );
 
 export default Index;
