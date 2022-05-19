@@ -1,4 +1,4 @@
-import { Flex, Button, Link as ChakraLink } from "@chakra-ui/react";
+import { Button, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
 export const CTA = () => (
   <Flex flexDirection="row" alignSelf="center" width="100%" maxWidth="48rem" py={2}>
