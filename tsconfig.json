@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "@components/*": ["components/*"],
+      "@core": ["components/Core/index.tsx"],
+      "@config/*": ["config/*"]
+    },
+    "target": "es5",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,

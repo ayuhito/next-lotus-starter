@@ -1,12 +1,12 @@
-import { Code, Link, List, Text } from "@chakra-ui/react";
+//import { Code, Link, List, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
-import { Hero } from "../components/Hero";
-import { CTA } from "../components/Index/CTA";
-import { ListItemCustom } from "../components/Index/ListItemCustom";
-import { Main } from "../components/Main";
+//import { Hero } from "../components/Hero";
+//import { CTA } from "../components/Index/CTA";
+//import { ListItemCustom } from "../components/Index/ListItemCustom";
+//import { Main } from "../components/Main";
 
-const Index = () => (
+/*const TempIndex = () => (
   <>
     <Head>
       <title>next-lotus-starter | Home</title>
@@ -37,6 +37,14 @@ const Index = () => (
       <CTA />
     </Main>
   </>
-);
+);*/
+
+const Index = () => {
+  return (
+    <>
+      <code>Hello</code>
+    </>
+  );
+};
 
 export default Index;
